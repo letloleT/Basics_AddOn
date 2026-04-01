@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Class Manipulation</title>
+    <style>
+      button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        background: black;
+        color: white;
+      }
+      .dark {
+        background-color: black;
+      }
+      .dark button {
+        background: white;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <button>Dark Theme</button>
+    <script>
+      function changeTheme() {
+        let body = document.querySelector("body");
+        body.classList.add("dark");
+      }
+      let button = document.querySelector("button");
+      button.addEventListener("click", changeTheme);
+    </script>
+  </body>
+</html>
