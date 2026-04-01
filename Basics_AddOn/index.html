@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basics Add-On Project</title>
+    <style>
+      body {
+        background: linear-gradient(to top, #dfe9f3 0%, white 100%);
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      h1 {
+        text-align: center;
+        /* text-shadow:
+          2px 2px 4px #333,
+          0 0 10px plum; */
+      }
+      h2 {
+        text-align: center;
+        font-family: "PT Mono", monospace;
+      }
+      p {
+        font-size: 18px;
+        line-height: 1.6;
+      }
+      a {
+        color: #885df1;
+      }
+      .container {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 40px;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 14px 18px rgba(0, 0, 0, 0.1);
+      }
+      button {
+        margin: 0 auto;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        display: block;
+      }
+      .theme-button {
+        background-color: #885df1;
+        color: white;
+        border: none;
+        border-radius: 5px;
+      }
+      .theme-button:hover {
+        background-color: #091521;
+        color: white;
+        transform: translate3d(0, 2px, 0);
+      }
+      .main-button {
+        border: #885df1 solid 2px;
+        color: #885df1;
+        background: white;
+        font-weight: bold;
+        font-size: 20px;
+        border-radius: 10px;
+        transition: all 150ms ease-in-out;
+      }
+      .main-button:hover {
+        background: #885df1;
+        color: white;
+        border: #885df1 solid 2px;
+        box-shadow: 0 14px 18px rgba(0, 0, 0, 0.1);
+        transform: translate3d(0, 2px, 0);
+      }
+      img {
+        max-width: 100%;
+      }
+      footer {
+        text-align: center;
+        margin: 20px 0;
+        font-size: 18px;
+        font-family: "PT Mono", monospace;
+      }
+      .intro-img {
+        border-radius: 10px;
+        transition: all 150ms ease-in-out;
+      }
+      .intro-img:hover {
+        border-radius: 10px;
+        filter: contrast(80%);
+        transform: scale(1.1);
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 10px;
+        margin: 10px;
+      }
+      .grid img {
+        border-radius: 10px;
+        transition: all 150ms ease-in-out;
+      }
+      .grid img:hover {
+        filter: contrast(100%);
+        transform: scale(1.05);
+      }
+      /* -----Theme Switching ----- */
+      .dark {
+        background: linear-gradient(
+          109.6deg,
+          rgb(36, 45, 57) 11.2%,
+          rgb(16, 37, 60) 51.2%,
+          rgb(0, 0, 0) 98.6%
+        );
+        color: white;
+      }
+      .dark .container {
+        background: #091521;
+        box-shadow: 0 14px 18px rgba(0, 0, 0, 0.1);
+      }
+      .dark .theme-button {
+        background-color: white;
+        color: #333;
+      }
+      .dark a {
+        color: #885df1;
+      }
+      .dark .theme-button {
+        background-color: #091521;
+        color: white;
+        border: none;
+        border-radius: 10px;
+      }
+      .dark .theme-button:hover {
+        background-color: #885df1;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        transform: translate3d(0, 2px, 0);
+      }
+      .dark .main-button {
+        background: #885df1;
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
+        border-radius: 10px;
+        transition: all 150ms ease-in-out;
+      }
+      .dark .main-button:hover {
+        border: #885df1 solid 2px;
+        color: #885df1;
+        background: white;
+        box-shadow: 0 14px 18px rgba(243, 110, 110, 0.1);
+        transform: translate3d(0, 2px, 0);
+      }
+    </style>
+  </head>
+  <body>
+    <button class="theme-button">Change Theme</button>
+    <div class="container">
+      <h1>🥗 Cooking</h1>
+      <h2>My Go-to Pastime</h2>
+      <a href="https://en.wikipedia.org/wiki/Cooking"
+        ><img src="./images/cooking_10.jpg" class="intro-img" alt=""
+      /></a>
+      <div class="grid">
+        <img src="./images/cooking_7.jpg" alt="" />
+        <img src="./images/cooking_12.jpg" alt="" />
+        <img src="./images/cooking_11.jpg" alt="" />
+        <img src="./images/cooking_2.jpg" alt="" />
+      </div>
+
+      <p>
+        Cooking is the art, science, and craft of applying heat to food to
+        enhance its flavor, digestibility, nutrition, and safety. Essential
+        techniques include, but are not limited to, frying (deep, shallow, pan),
+        roasting, baking, broiling, grilling, poaching, and pressure cooking. It
+        is a versatile skill combining technique with tools like pots, pans, and
+        utensils.
+      </p>
+      <a href="https://en.wikipedia.org/wiki/Cooking" target="_blank"
+        >📖Read on Wikipedia</a
+      >
+      <button class="main-button">Get Recipes</button>
+      <footer>Coded by Tshepang with HTML, CSS, and JavaScript</footer>
+    </div>
+    <script>
+      function getRecipes() {
+        alert("Here are some delicious recipes for you to try!");
+      }
+      let recipeButton = document.querySelector(".main-button");
+      recipeButton.addEventListener("click", getRecipes);
+
+      function changeTheme() {
+        let body = document.querySelector("body");
+        body.classList.toggle("dark");
+      }
+      let themeButton = document.querySelector(".theme-button");
+      themeButton.addEventListener("click", changeTheme);
+    </script>
+  </body>
+</html>

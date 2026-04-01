@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Grids</title>
+    <style>
+      img {
+        width: 100%;
+        border-radius: 10px;
+      }
+      .image-gallery {
+        margin: 60px auto;
+        display: grid;
+        width: 900px;
+        grid-template-columns: repeat(4, 200px);
+        grid-gap: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="image-gallery">
+      <img src="./images/gabs.jpg" alt="Gaborone" />
+      <img src="./images/gabs_1.jpg" alt="Gaborone" />
+      <img src="./images/gabs_2.jpg" alt="Gaborone" />
+      <img src="./images/gabs_3.jpg" alt="Gaborone" />
+      <img src="./images/gabs.jpg" alt="Gaborone" />
+      <img src="./images/gabs_1.jpg" alt="Gaborone" />
+      <img src="./images/gabs_2.jpg" alt="Gaborone" />
+      <img src="./images/gabs_3.jpg" alt="Gaborone" />
+    </div>
+  </body>
+</html>
